@@ -6,4 +6,10 @@
 
 % Your implementation please...
 
+1 { sudoku(X,Y,N) : N=1..4 } 1 :- X=1..4, Y=1..4.
+sudoku(X,Y,N) :- initial(X,Y,N).
+
+:- sudoku(X,Y,N), sudoku(X,Y2,N), Y != Y2.
+:- sudoku(X,Y,N), sudoku(X2,Y,N), X != X2.
+
 #show sudoku/3.
